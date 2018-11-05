@@ -289,4 +289,9 @@
       version = #{version,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--获取历史平均收益率-->
+  <select id="selectHistoryAverateRate" resultType="java.lang.Double">
+    SELECT CAST(AVG(rate) AS DECIMAL(10,2)) FROM b_loan_info;
+  </select>
 </mapper>
