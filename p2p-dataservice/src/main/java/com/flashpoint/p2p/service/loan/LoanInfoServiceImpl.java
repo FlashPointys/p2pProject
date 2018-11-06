@@ -17,7 +17,7 @@ public class LoanInfoServiceImpl implements  LoanInfoService{
     private RedisTemplate<String,Object> redisTemplate;
     @Override
     public Double queryHistoryAverageRate() {
-//首先去redis缓存中查询，有：直接 ，没有：去数据库查询，然后并存放到redis缓存中
+        //首先去redis缓存中查询，有：直接 ，没有：去数据库查询，然后并存放到redis缓存中
 
         //去redis中获取该值
         Double historyAverageRate= (Double) redisTemplate.opsForValue().get(Constant.HISTORY_AVERAGE_RATE);
