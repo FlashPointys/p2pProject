@@ -44,7 +44,7 @@ public class IndexController {
 
         model.addAttribute(Constant.BID_ALL_MONEY,bidAllMoney);
 
-//queryLoanInfoListByProductType  selectLoanInfoByPage
+       //queryLoanInfoListByProductType  selectLoanInfoByPage
 
         //将下列查询看成分页查询
         //准备查询数据
