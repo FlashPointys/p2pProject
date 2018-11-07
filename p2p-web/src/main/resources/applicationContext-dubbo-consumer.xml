@@ -16,4 +16,9 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!--产品业务-->
     <dubbo:reference id="loanInfoService" interface="com.flashpoint.p2p.service.loan.LoanInfoService" version="1.0.0" check="false"></dubbo:reference>
+    <!--用户业务-->
+    <dubbo:reference id="userService" interface="com.flashpoint.p2p.service.user.UserService" version="1.0.0" check="false"></dubbo:reference>
+
+    <!--投资业务-->
+    <dubbo:reference id="bidInfoService" interface="com.flashpoint.p2p.service.loan.BidInfoService" version="1.0.0" check="false"></dubbo:reference>
 </beans>

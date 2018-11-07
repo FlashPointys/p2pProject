@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef2eb8c9-412f-4e62-86c3-f2b41dbed61d" name="Default Changelist" comment="" />
+    <list default="true" id="ef2eb8c9-412f-4e62-86c3-f2b41dbed61d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/service/user/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/service/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-common/src/main/java/com/flashpoint/p2p/common/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-common/src/main/java/com/flashpoint/p2p/common/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/BidInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/BidInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/BidInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/BidInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/LoanInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/LoanInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/LoanInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/loan/LoanInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/user/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/user/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/user/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/mapper/user/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/service/loan/LoanInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/java/com/flashpoint/p2p/service/loan/LoanInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-dataservice/src/main/resources/applicationContext-dubbo-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-dataservice/src/main/resources/applicationContext-dubbo-provider.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/BidInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/BidInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/IncomeRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/IncomeRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/LoanInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/LoanInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/RechargeRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/loan/RechargeRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/user/FinanceAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/user/FinanceAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/service/loan/LoanInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-exterface/src/main/java/com/flashpoint/p2p/service/loan/LoanInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-parent/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-parent/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-parent/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-web/src/main/java/com/flashpoint/p2p/web/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-web/src/main/java/com/flashpoint/p2p/web/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-web/src/main/resources/applicationContext-dubbo-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-web/src/main/resources/applicationContext-dubbo-consumer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-web/src/main/webapp/commons/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-web/src/main/webapp/commons/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/p2p-web/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2p-web/src/main/webapp/test.jsp" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,15 +41,19 @@
     <session id="13508283">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -49,8 +80,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="61" />
-    <option name="y" value="46" />
+    <option name="x" value="105" />
+    <option name="y" value="179" />
     <option name="width" value="1308" />
     <option name="height" value="797" />
   </component>
@@ -68,20 +99,22 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541404874018" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
@@ -158,26 +191,24 @@
       <option name="presentableId" value="Default" />
       <updated>1541404802234</updated>
       <workItem from="1541404809037" duration="132000" />
+      <workItem from="1541557365189" duration="14000" />
+      <workItem from="1541557428081" duration="2000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132000" />
+    <option name="totallyTimeSpent" value="148000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="46" width="1308" height="797" extended-state="0" />
+    <frame x="105" y="179" width="1308" height="797" extended-state="0" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25801283" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -185,15 +216,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,13 +238,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml" />
   </component>
   <component name="masterDetails">
     <states>

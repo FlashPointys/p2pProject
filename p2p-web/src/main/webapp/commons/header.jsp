@@ -32,7 +32,7 @@ $(function(){
         <ul class="main-nav">
             <li><h2><a id="jinxin" href="${pageContext.request.contextPath}">首页<i></i></a></h2></li><!--current为当前状态-->
             <li>
-            	<h2><a id="wytz" href="javascript:void(0)">我要投资<i></i></a></h2>
+            	<h2><a id="wytz" href="${pageContext.request.contextPath}/loan/loan">我要投资<i></i></a></h2>
             	<div class="menu-drop" style="display:none;">
 	               <a href="loan/loan?ptype=1">优选类产品</a>
 	               <a href="loan/loan?ptype=2">散标类产品</a>

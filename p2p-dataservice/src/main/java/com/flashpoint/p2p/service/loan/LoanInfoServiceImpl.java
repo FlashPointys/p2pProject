@@ -2,10 +2,14 @@ package com.flashpoint.p2p.service.loan;
 
 import com.flashpoint.p2p.common.Constant;
 import com.flashpoint.p2p.mapper.loan.LoanInfoMapper;
+import com.flashpoint.p2p.model.loan.LoanInfo;
+import com.flashpoint.p2p.model.vo.PaginationVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Service("loanInfoServiceImpl")
@@ -29,5 +33,25 @@ public class LoanInfoServiceImpl implements  LoanInfoService{
         return historyAverageRate;
 
 
+    }
+
+    @Override
+    public List<LoanInfo> queryLoanInfoListByProductType(Map<String, Object> paraMap) {
+        return loanInfoMapper.queryLoanInfoByPage(paraMap);
+    }
+
+    @Override
+    public PaginationVO<LoanInfo> queryLoanInfoByPage(Map<String, Object> map) {
+        PaginationVO<LoanInfo> paginationVO=new PaginationVO<>();
+        paginationVO.setTotal(loanInfoMapper.selectTotal(map));
+
+        paginationVO.setDataList(loanInfoMapper.selectLoanInfoByPage(map));
+        return paginationVO;
+    }
+
+    @Override
+    public LoanInfo queryLoaninfoByLoanId(Integer id) {
+
+        return loanInfoMapper.selectByPrimaryKey(id);
     }
 }

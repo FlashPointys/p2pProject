@@ -294,4 +294,38 @@
   <select id="selectHistoryAverateRate" resultType="java.lang.Double">
     SELECT CAST(AVG(rate) AS DECIMAL(10,2)) FROM b_loan_info;
   </select>
+  <!--分页查询产品信息表-->
+  <select id="queryLoanInfoByPage" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from b_loan_info
+    <where>
+      <if test="productType!=null">
+        product_type=#{productType}
+      </if>
+    </where>
+    order by release_time desc
+    limit #{currentPage},#{pageSize}
+  </select>
+  <!--查询商品的总条数-->
+  <select id="selectTotal" resultType="java.lang.Long">
+    select count(*)
+    from b_loan_info
+    <where>
+      <if test="ptype!=null">
+        product_type=#{ptype}
+      </if>
+    </where>
+  </select>
+  <!--查询每页的商品信息-->
+  <select id="selectLoanInfoByPage" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from b_loan_info
+    <where>
+      <if test="ptype!=null">
+        product_type=#{ptype}
+      </if>
+    </where>
+    order by release_time desc
+    limit #{startIndex},#{pageSize}
+  </select>
 </mapper>

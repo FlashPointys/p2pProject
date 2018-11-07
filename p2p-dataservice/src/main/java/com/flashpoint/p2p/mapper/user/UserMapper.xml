@@ -165,4 +165,8 @@
       header_image = #{headerImage,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!--查询用户数量-->
+  <select id="selectAllUserCount" resultType="java.lang.Long">
+      select count(*) from u_user
+  </select>
 </mapper>
