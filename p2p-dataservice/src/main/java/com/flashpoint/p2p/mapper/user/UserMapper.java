@@ -56,4 +56,19 @@ public interface UserMapper {
      * @return
      */
     Long selectAllUserCount();
+
+    /**
+     * 通过手机号码查询用户
+     * @param phone
+     * @return
+     */
+    User selectUserByPhone(String phone);
+
+    /**
+     * VB
+     * @param phone
+     * @param loginPassword
+     * @return
+     */
+    User selectUserByPhoneAndLoginPassword(String phone, String loginPassword);
 }

@@ -154,4 +154,17 @@
       recharge_desc = #{rechargeDesc,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectRecharageRecourdListByPage" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from b_recharge_record
+    where uid=#{uid}
+    order by recharge_time desc
+    limit #{currentPage},#{pageSize}
+  </select>
+  <!--通过用户ID查询有多少条充值记录-->
+  <select id="selectRecharageRecourdCountByUid" resultType="java.lang.Long">
+    select count(*)
+    from b_recharge_record
+    where uid=#{uid}
+  </select>
 </mapper>

@@ -328,4 +328,18 @@
     order by release_time desc
     limit #{startIndex},#{pageSize}
   </select>
+    <!--更新商品剩余可投金额-->
+    <update id="updateLeftProductMoneyByLoanId">
+        update b_loan_info
+        set left_product_money=left_product_money-#{bidMoney},
+        version=version+1
+        where id=#{loanId} and version=#{version} and (left_product_money-#{bidMoney})>=0
+    </update>
+  <!--获取已经满标得产品-->
+  <select id="selectByProductStatus" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from b_loan_info
+    where
+    product_status=#{product_status}
+  </select>
 </mapper>

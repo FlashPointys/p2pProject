@@ -169,4 +169,16 @@
   <select id="selectAllUserCount" resultType="java.lang.Long">
       select count(*) from u_user
   </select>
+  <!--通过手机号码查询用户信息-->
+  <select id="selectUserByPhone" resultMap="BaseResultMap">
+    select *
+    from  u_user
+    where phone=#{phone}
+  </select>
+    <!--根据用户名密码查询用户-->
+    <select id="selectUserByPhoneAndLoginPassword" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"></include>
+        from u_user
+        where phone=#{0} and login_password=#{1}
+    </select>
 </mapper>

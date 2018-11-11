@@ -156,12 +156,21 @@
           <dl class="usable">
             <dt>我的账户可用</dt>
             <dd>资金(元)：
-            
-	            	<!-- 判断用户是否登录：未登录，显示登录连接 -->
-	            	<span style="font-size:18px;color:#ff6161;vertical-align:bottom;"><a href="${pageContext.request.contextPath}/login.jsp">请登录</a></span>
+
+
+             <c:choose>
+                    <c:when test="${empty user}">
+                        <!-- 判断用户是否登录：未登录，显示登录连接 -->
+                        <span style="font-size:18px;color:#ff6161;vertical-align:bottom;"><a href="${pageContext.request.contextPath}/login.jsp">请登录</a></span>
+                    </c:when>
+                    <c:otherwise>
+                        <!-- 判断用户是否登录：已登录，显示可用余额 -->
+                         <span style="font-size:18px;color:#ff6161;vertical-align:bottom;">${financeAccount.availableMoney}</span>
+                    </c:otherwise>
+                </c:choose>
+
 	        
-	            	<!-- 判断用户是否登录：已登录，显示可用余额 -->
-	           		<%-- <span style="font-size:18px;color:#ff6161;vertical-align:bottom;">${financeAccount.availableMoney}</span> --%>
+
 	        
             </dd>
           </dl>
@@ -204,6 +213,118 @@ function closeit() {
 	$("#failurePayment").hide();
 	$("#dialog-overlay1").hide();
 	window.location.href="${pageContext.request.contextPath}/loan/myCenter";
+}
+var contextPath="${pageContext.request.contextPath}";
+//关于投资失去焦点的顾虑判断
+function checkMoney() {
+    //投资金额
+    var bidMoney=$.trim($("#bidMoney").val());
+    //产品的类型
+    var productType="${loanInfo.productType}";
+    //投资周期
+    var cycle="${loanInfo.cycle}";
+    //获取产品的利率
+    var rate="${loanInfo.rate}";
+
+    if(bidMoney==""){
+        $(".max-invest-money").html("请输入投资金额");
+        $("#shouyi").html("");
+        return false;
+    }else if (isNaN(bidMoney)){
+        $(".max-invest-money").html("投资金额必须是数字");
+        $("#shouyi").html("");
+        return false;
+    }else if (bidMoney <= 0){
+        $(".max-invest-money").html("投资金额不能小于0");
+        $("#shouyi").html("");
+        return false;
+    }else if (bidMoney % 100!=0){
+       $(".max-invest-money").html("投资金额必须为100的倍数");
+        $("#shouyi").html("");
+       return false;
+    }else {
+        $(".max-invest-money").html("");
+
+        //计算相应利率
+
+        var incomeMoney="";
+        if(productType==0){
+            incomeMoney=bidMoney*(rate/100/365)*cycle;
+        }else{
+            incomeMoney=bidMoney*(rate/100/365)*cycle*30;
+        }
+        incomeMoney=Math.round(incomeMoney*Math.pow(10,2))/Math.pow(10,2);
+
+        $("#shouyi").html(incomeMoney);
+        return true;
+
+    }
+}
+function  invest() {
+
+
+    var user="${user}";
+    var name="${user.name}";
+    var bidMoney=$.trim($("#bidMoney").val());
+    var bidMaxLimit="${loanInfo.bidMaxLimit}";
+    var bidMinLimit="${loanInfo.bidMinLimit}";
+    var leftProductMoney="${loanInfo.leftProductMoney}";
+    var availableMoney="${financeAccount.availableMoney}";
+    var loanId="${loanInfo.id}";
+
+
+    alert(bidMinLimit);
+    alert(bidMaxLimit);
+    if(checkMoney()){
+
+        if(user==""){
+            if(confirm("您还没有登录,请进行登录")){
+                window.location.href=contextPath+"/login.jsp";
+            }
+            return false;
+        } else if (name==""){
+             if(confirm("您还未实名认证,请去认证")){
+                 window.location.href=contextPath+"/realName.jsp";
+             }
+             return false;
+
+        }else if(parseFloat(bidMoney) < parseFloat(bidMinLimit)){
+            $(".max-invest-money").html("投资金额不得小于"+bidMinLimit);
+            return false;
+
+        }else if (parseFloat(bidMoney)>parseFloat(bidMaxLimit)){
+            $(".max-invest-money").html("投资金额不得大于"+bidMaxLimit);
+            return false;
+        }else if(parseFloat(bidMoney)>parseFloat(leftProductMoney)){
+            $(".max-invest-money").html("投资金额不得大于商品剩余投资金额");
+            return false;
+        }else if(parseFloat(bidMoney)>parseFloat(availableMoney)){
+            $(".max-invest-money").html("您的账户余额不足,请去充值");
+            return false;
+        }else {
+           $.ajax({
+               url:contextPath+"/loan/invest",
+               data:{
+                   "bidMoney":bidMoney,
+                   "loanId":loanId
+               },
+               type:"post",
+               success:function (json) {
+                   if(json.errorMessage=="OK"){
+                       $("#failurePayment").show();
+                       $("#dialog-overlay1").show();
+
+                   }else{
+                       $(".max-invest-money").html(json.errorMessage);
+
+                   }
+               },
+               error:function () {
+                   $(".max-invest-money").html("系统繁忙,请稍后再试...");
+               }
+           });
+        }
+    }
 }
 </script>
 </body>

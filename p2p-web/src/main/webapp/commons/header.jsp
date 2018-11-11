@@ -43,30 +43,38 @@ $(function(){
             <li><h2><a id="insurance" href="javascript:void(0);" class="/webPage/index/insurance.html">安全计划<i></i></a></h2></li>
         </ul>
         <div class="login-right">
-            	<!-- 未登录start -->
-            	<div class="no-login"><a href="register.jsp" class="btn-reg">注册</a><a href="login.jsp" class="btn-login">登录</a></div>
-            	<!-- 未登录end -->
-            	
-                <!--登录后begin-->
-               <!--  
-                <div class="logged">
+
+            <c:choose>
+                <c:when test="${empty user}">
+                    <!-- 未登录start -->
+                    <div class="no-login"><a href="register.jsp" class="btn-reg">注册</a><a href="login.jsp" class="btn-login">登录</a></div>
+                    <!-- 未登录end -->
+                </c:when>
+                <c:otherwise>
+                    <!--登录后begin-->
+                    <div class="logged">
                     <div class="userinfo-up">
-                        <a href="loan/myCenter" class="user-phone">13788889999</a><a href="/webPage/account/member_systems.html" class="user-vip" id="member">VIP1</a><i></i>
+                    <a href="loan/myCenter" class="user-phone">${user.phone}</a><a href="/webPage/account/member_systems.html" class="user-vip" id="member">VIP1</a><i></i>
                     </div>
                     <div class="userinfo-drop-down" style="height: 0px;">
-                        <div class="down-bk">
-                            <div class="user-balance">余额：<span id="frame_top">1000.00</span>元</div>
-                            <ul class="quick-entry clearfix">
-                                <li class="icon-recharge"><a href="toRecharge.jsp"><i></i><span>充值</span></a></li>
-                                <li class="icon-invest" style="margin-left:85px;"><a href="loan/loan"><i></i><span>投资</span></a></li>
-                            </ul>
-                            <div class="enter">进入“<a href="/webPage/account/acc.html?mytime=1501046257129">我的小金库</a>”</div>
-                            <div class="exit"><a href="loan/logout">退出</a></div>
-                        </div>
+                    <div class="down-bk">
+                    <div class="user-balance">余额：<span id="frame_top">--</span>元</div>
+                    <ul class="quick-entry clearfix">
+                    <li class="icon-recharge"><a href="toRecharge.jsp"><i></i><span>充值</span></a></li>
+                    <li class="icon-invest" style="margin-left:85px;"><a href="loan/loan"><i></i><span>投资</span></a></li>
+                    </ul>
+                    <div class="enter">进入“<a href="/webPage/account/acc.html?mytime=1501046257129">我的小金库</a>”</div>
+                    <div class="exit"><a href="loan/logout">退出</a></div>
                     </div>
-                </div>
-                 -->
-                <!--登录后end-->
+                    </div>
+                    </div>
+
+                    <!--登录后end-->
+                </c:otherwise>
+            </c:choose>
+
+            	
+
         </div>
     </div>
 </div>

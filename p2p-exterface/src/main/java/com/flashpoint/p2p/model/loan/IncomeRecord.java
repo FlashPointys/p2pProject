@@ -259,4 +259,14 @@ public class IncomeRecord implements Serializable {
     public void setIncomeStatus(Integer incomeStatus) {
         this.incomeStatus = incomeStatus;
     }
+
+    private LoanInfo loanInfo;
+
+    public LoanInfo getLoanInfo() {
+        return loanInfo;
+    }
+
+    public void setLoanInfo(LoanInfo loanInfo) {
+        this.loanInfo = loanInfo;
+    }
 }

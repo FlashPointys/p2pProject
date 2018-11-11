@@ -59,7 +59,6 @@ public class BidInfo implements Serializable {
      * This method returns the value of the database column b_bid_info.id
      *
      * @return the value of b_bid_info.id
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public Integer getId() {
@@ -71,7 +70,6 @@ public class BidInfo implements Serializable {
      * This method sets the value of the database column b_bid_info.id
      *
      * @param id the value for b_bid_info.id
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public void setId(Integer id) {
@@ -83,7 +81,6 @@ public class BidInfo implements Serializable {
      * This method returns the value of the database column b_bid_info.loan_id
      *
      * @return the value of b_bid_info.loan_id
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public Integer getLoanId() {
@@ -95,7 +92,6 @@ public class BidInfo implements Serializable {
      * This method sets the value of the database column b_bid_info.loan_id
      *
      * @param loanId the value for b_bid_info.loan_id
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public void setLoanId(Integer loanId) {
@@ -107,7 +103,6 @@ public class BidInfo implements Serializable {
      * This method returns the value of the database column b_bid_info.uid
      *
      * @return the value of b_bid_info.uid
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public Integer getUid() {
@@ -119,7 +114,6 @@ public class BidInfo implements Serializable {
      * This method sets the value of the database column b_bid_info.uid
      *
      * @param uid the value for b_bid_info.uid
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public void setUid(Integer uid) {
@@ -131,7 +125,6 @@ public class BidInfo implements Serializable {
      * This method returns the value of the database column b_bid_info.bid_money
      *
      * @return the value of b_bid_info.bid_money
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public Double getBidMoney() {
@@ -143,7 +136,6 @@ public class BidInfo implements Serializable {
      * This method sets the value of the database column b_bid_info.bid_money
      *
      * @param bidMoney the value for b_bid_info.bid_money
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public void setBidMoney(Double bidMoney) {
@@ -155,7 +147,6 @@ public class BidInfo implements Serializable {
      * This method returns the value of the database column b_bid_info.bid_time
      *
      * @return the value of b_bid_info.bid_time
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public Date getBidTime() {
@@ -167,7 +158,6 @@ public class BidInfo implements Serializable {
      * This method sets the value of the database column b_bid_info.bid_time
      *
      * @param bidTime the value for b_bid_info.bid_time
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public void setBidTime(Date bidTime) {
@@ -179,7 +169,6 @@ public class BidInfo implements Serializable {
      * This method returns the value of the database column b_bid_info.bid_status
      *
      * @return the value of b_bid_info.bid_status
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public Integer getBidStatus() {
@@ -191,14 +180,24 @@ public class BidInfo implements Serializable {
      * This method sets the value of the database column b_bid_info.bid_status
      *
      * @param bidStatus the value for b_bid_info.bid_status
-     *
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     public void setBidStatus(Integer bidStatus) {
         this.bidStatus = bidStatus;
     }
 
+    private LoanInfo loanInfo;
+
     private User user;
+
+
+    public LoanInfo getLoanInfo() {
+        return loanInfo;
+    }
+
+    public void setLoanInfo(LoanInfo loanInfo) {
+        this.loanInfo = loanInfo;
+    }
 
     public User getUser() {
         return user;

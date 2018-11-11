@@ -16,6 +16,33 @@
     <result column="income_money" property="incomeMoney" jdbcType="DOUBLE" />
     <result column="income_status" property="incomeStatus" jdbcType="INTEGER" />
   </resultMap>
+  <!--收益记录跟商品的一对一关系-->
+  <resultMap id="BaseLoanInfoResultMap" type="com.flashpoint.p2p.model.loan.IncomeRecord">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="loan_id" property="loanId" jdbcType="INTEGER" />
+    <result column="bid_id" property="bidId" jdbcType="INTEGER" />
+    <result column="bid_money" property="bidMoney" jdbcType="DOUBLE" />
+    <result column="income_date" property="incomeDate" jdbcType="DATE" />
+    <result column="income_money" property="incomeMoney" jdbcType="DOUBLE" />
+    <result column="income_status" property="incomeStatus" jdbcType="INTEGER" />
+    <association property="loanInfo" javaType="com.flashpoint.p2p.model.loan.LoanInfo">
+      <id column="id" property="id" jdbcType="INTEGER" />
+      <result column="product_name" property="productName" jdbcType="VARCHAR" />
+      <result column="rate" property="rate" jdbcType="DOUBLE" />
+      <result column="cycle" property="cycle" jdbcType="INTEGER" />
+      <result column="release_time" property="releaseTime" jdbcType="DATE" />
+      <result column="product_type" property="productType" jdbcType="INTEGER" />
+      <result column="product_no" property="productNo" jdbcType="VARCHAR" />
+      <result column="product_money" property="productMoney" jdbcType="DOUBLE" />
+      <result column="left_product_money" property="leftProductMoney" jdbcType="DOUBLE" />
+      <result column="bid_min_limit" property="bidMinLimit" jdbcType="DOUBLE" />
+      <result column="bid_max_limit" property="bidMaxLimit" jdbcType="DOUBLE" />
+      <result column="product_status" property="productStatus" jdbcType="INTEGER" />
+      <result column="product_full_time" property="productFullTime" jdbcType="TIMESTAMP" />
+      <result column="version" property="version" jdbcType="INTEGER" />
+    </association>
+  </resultMap>
   <sql id="Base_Column_List" >
     <!--
       WARNING - @mbggenerated
@@ -165,4 +192,26 @@
       income_status = #{incomeStatus,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!--通过用户id查询最近收益-->
+  <select id="selectIncomeRecordListbyPage" resultMap="BaseLoanInfoResultMap">
+    select a.*,b.*
+    from b_income_record a
+    left join b_loan_info b
+    on a.loan_id=b.id
+    where a.uid=#{uid}
+    order by a.income_date desc
+    limit #{currentPage},#{pageSize}
+  </select>
+  <!--通过用户的ID查询手机条数-->
+  <select id="selectCountByUid" resultType="java.lang.Long">
+    select count(*)
+    from b_income_record
+    where uid=#{uid}
+  </select>
+  <!--查询当前时间的收益信息-->
+  <select id="selectIncomeRecordByIncomeDateAndIncomeStatus" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from b_income_record
+    where income_date=CURRENT_DATE and income_status=#{incomeStatus}
+  </select>
 </mapper>

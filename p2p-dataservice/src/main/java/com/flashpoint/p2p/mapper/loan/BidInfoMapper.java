@@ -3,6 +3,7 @@ package com.flashpoint.p2p.mapper.loan;
 import com.flashpoint.p2p.model.loan.BidInfo;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BidInfoMapper {
     /**
@@ -65,4 +66,18 @@ public interface BidInfoMapper {
      * @return
      */
     List<BidInfo> selectBidInfoListByLoanId(Integer id);
+
+    /**
+     * 分页查询交易记录
+     * @param map
+     * @return
+     */
+    List<BidInfo> selectBidInfoListByPage(Map<String, Object> map);
+
+    /**
+     * 通过uid查询交易条数
+     * @param paramMap
+     * @return
+     */
+    Long selectBidinfoCount(Map<String, Object> paramMap);
 }

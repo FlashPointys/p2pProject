@@ -1,15 +1,20 @@
 package com.flashpoint.p2p.web;
 
+import com.flashpoint.p2p.common.Constant;
 import com.flashpoint.p2p.model.loan.BidInfo;
 import com.flashpoint.p2p.model.loan.LoanInfo;
+import com.flashpoint.p2p.model.user.FinanceAccount;
+import com.flashpoint.p2p.model.vo.BidUserTop;
 import com.flashpoint.p2p.model.vo.PaginationVO;
 import com.flashpoint.p2p.service.loan.BidInfoService;
 import com.flashpoint.p2p.service.loan.LoanInfoService;
+import com.flashpoint.p2p.service.user.FinanceAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.flashpoint.p2p.model.user.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -24,6 +29,9 @@ public class LoanInfoController {
 
     @Autowired
     private BidInfoService bidInfoService;
+
+    @Autowired
+    private FinanceAccountService financeAccountService;
 
     @RequestMapping("loan/loan")
     public String loan(HttpServletRequest request, Model model,
@@ -64,7 +72,9 @@ public class LoanInfoController {
 
 
 
-        //TODO
+        //查询用户投资的排行榜
+       List<BidUserTop> bidUserTopList=  bidInfoService.queryBidUserTop();
+        model.addAttribute("bidUserTopList",bidUserTopList);
 
         return "loan";
     }
@@ -82,6 +92,15 @@ public class LoanInfoController {
 
         model.addAttribute("bidInfoList",bidInfoList);
 
+         User user= (User) request.getSession().getAttribute(Constant.SESSION_USER);
+
+         if(user!=null){
+            FinanceAccount financeAccount= financeAccountService.queryFinanceAccountByUid(user);
+
+            model.addAttribute("financeAccount",financeAccount);
+         }
         return "loanInfo";
     }
+
+
 }

@@ -1,6 +1,9 @@
 package com.flashpoint.p2p.mapper.user;
 
 import com.flashpoint.p2p.model.user.FinanceAccount;
+import com.flashpoint.p2p.model.user.User;
+
+import java.util.Map;
 
 public interface FinanceAccountMapper {
     /**
@@ -50,4 +53,18 @@ public interface FinanceAccountMapper {
      * @mbggenerated Mon Nov 05 17:44:36 CST 2018
      */
     int updateByPrimaryKey(FinanceAccount record);
+
+    /**
+     * 根据用户id查询账户信息
+     * @param user
+     * @return
+     */
+    FinanceAccount selectFinaceAccountByUid(User user);
+
+    /**
+     * 更新用户的剩余金额
+     * @param paramMap
+     * @return
+     */
+    int updateFinanceAccountByUid(Map<String, Object> paramMap);
 }

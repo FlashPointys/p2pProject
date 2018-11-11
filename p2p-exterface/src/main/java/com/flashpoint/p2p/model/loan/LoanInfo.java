@@ -2,6 +2,7 @@ package com.flashpoint.p2p.model.loan;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Map;
 
 public class LoanInfo implements Serializable {
     /**
@@ -483,4 +484,6 @@ public class LoanInfo implements Serializable {
     public void setProductDesc(String productDesc) {
         this.productDesc = productDesc == null ? null : productDesc.trim();
     }
+
+
 }

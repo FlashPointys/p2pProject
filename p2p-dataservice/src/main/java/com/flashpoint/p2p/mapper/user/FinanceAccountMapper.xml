@@ -108,4 +108,16 @@
       available_money = #{availableMoney,jdbcType=DOUBLE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!--根据用户id查询用户信息-->
+  <select id="selectFinaceAccountByUid" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from u_finance_account
+    where uid=#{id}
+  </select>
+  <!--更新用户的剩余金额-->
+  <update id="updateFinanceAccountByUid">
+    update u_finance_account
+    set available_money=available_money-#{bidMoney}
+    where uid=#{uid} and (available_money-#{bidMoney})>=0
+  </update>
 </mapper>

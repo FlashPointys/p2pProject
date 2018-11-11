@@ -21,4 +21,12 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!--投资业务-->
     <dubbo:reference id="bidInfoService" interface="com.flashpoint.p2p.service.loan.BidInfoService" version="1.0.0" check="false"></dubbo:reference>
+    <!--账户业务-->
+    <dubbo:reference id="financeAccountService" interface="com.flashpoint.p2p.service.user.FinanceAccountService" version="1.0.0" check="false"></dubbo:reference>
+
+    <!--充值业务-->
+    <dubbo:reference id="rechargeRecordService" interface="com.flashpoint.p2p.service.loan.RechargeRecordService" version="1.0.0" check="false"></dubbo:reference>
+
+    <!--收益业务-->
+    <dubbo:reference id="incomeRecordService" interface="com.flashpoint.p2p.service.loan.IncomeRecordService" version="1.0.0" check="false"></dubbo:reference>
 </beans>

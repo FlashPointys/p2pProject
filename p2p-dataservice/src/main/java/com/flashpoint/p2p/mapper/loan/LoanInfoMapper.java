@@ -88,4 +88,18 @@ public interface LoanInfoMapper {
      * @return
      */
     List<LoanInfo> selectLoanInfoByPage(Map<String, Object> map);
+
+    /**
+     * 更新商品剩余可投金额
+     * @param paramMap
+     * @return
+     */
+    int updateLeftProductMoneyByLoanId(Map<String, Object> paramMap);
+
+    /**
+     *获取已经满标得产品
+     * @param i
+     * @return
+     */
+    List<LoanInfo> selectByProductStatus(int i);
 }
