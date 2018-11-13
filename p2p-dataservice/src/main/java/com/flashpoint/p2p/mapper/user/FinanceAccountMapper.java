@@ -67,4 +67,11 @@ public interface FinanceAccountMapper {
      * @return
      */
     int updateFinanceAccountByUid(Map<String, Object> paramMap);
+
+    /**
+     * 根据充值订单号更新充值记录
+     * @param paramMap
+     * @return
+     */
+    int updateFinanceAccountByRecharge(Map<String, Object> paramMap);
 }

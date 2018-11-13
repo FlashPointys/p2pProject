@@ -1,5 +1,6 @@
 package com.flashpoint.p2p.util;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -24,5 +25,9 @@ public class DateUtils {
         calendar.add(Calendar.MONTH,month);
 
         return  calendar.getTime();
+    }
+
+    public static String getTimeStamp() {
+        return new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
     }
 }

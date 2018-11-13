@@ -47,5 +47,9 @@ public class Constant {
      */
     public static final String SESSION_USER = "user";
     public static final String INVEST_TOP = "investTop";
+    /**
+     * 全局redis唯一数字
+     */
+    public static final String ONLY_NUMBER = "onlyNumber";
 }
 

@@ -67,4 +67,11 @@ public interface RechargeRecordMapper {
      * @return
      */
     Long selectRecharageRecourdCountByUid(Map<String, Object> paramMap);
+
+    /**
+     * 更新充值记录为2
+     * @param updateRechargeRecord
+     * @return
+     */
+    int updateRechargeRecordByRechargeNo(RechargeRecord updateRechargeRecord);
 }

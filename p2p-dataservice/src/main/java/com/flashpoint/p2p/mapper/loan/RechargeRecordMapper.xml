@@ -167,4 +167,26 @@
     from b_recharge_record
     where uid=#{uid}
   </select>
+  <!--更新充值状态为2-->
+  <update id="updateRechargeRecordByRechargeNo">
+    update
+    b_recharge_record
+    <set>
+
+      <if test="rechargeStatus != null">
+        recharge_status = #{rechargeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="rechargeMoney != null">
+        recharge_money = #{rechargeMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="rechargeTime != null">
+        recharge_time = #{rechargeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rechargeDesc != null">
+        recharge_desc = #{rechargeDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where recharge_no = #{rechargeNo}
+  </update>
+
 </mapper>

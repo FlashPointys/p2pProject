@@ -21,4 +21,25 @@ public interface RechargeRecordService {
      * @return
      */
     PaginationVO<RechargeRecord> queryRechargeRecourdListByPage(Map<String, Object> paramMap);
+
+    /**
+     *添加一条充值记录
+     * @param rechargeRecord
+     * @return
+     */
+    int addRechargeRecord(RechargeRecord rechargeRecord);
+
+    /**
+     * 更新充值记录的状态为2
+     * @param updateRechargeRecord
+     * @return
+     */
+    int modifyRechargeRecordByRechargeNo(RechargeRecord updateRechargeRecord);
+
+    /**
+     * 用户充值
+     * @param paramMap
+     * @return
+     */
+    int recharge(Map<String, Object> paramMap);
 }

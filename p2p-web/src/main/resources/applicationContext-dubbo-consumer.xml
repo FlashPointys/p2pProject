@@ -29,4 +29,8 @@ http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!--收益业务-->
     <dubbo:reference id="incomeRecordService" interface="com.flashpoint.p2p.service.loan.IncomeRecordService" version="1.0.0" check="false"></dubbo:reference>
+
+    <!--redis全局唯一数字业务-->
+    <dubbo:reference id="onlyNumberService" interface="com.flashpoint.p2p.service.loan.OnlyNumberService" version="1.0.0" check="false"></dubbo:reference>
+
 </beans>

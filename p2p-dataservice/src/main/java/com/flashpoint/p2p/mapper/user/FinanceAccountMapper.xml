@@ -120,4 +120,13 @@
     set available_money=available_money-#{bidMoney}
     where uid=#{uid} and (available_money-#{bidMoney})>=0
   </update>
+  <!--更新帐户可用余额：用户充值-->
+  <update id="updateFinanceAccountByRecharge">
+        update
+          u_finance_account
+        set
+          available_money = available_money + #{rechargeMoney}
+        where
+          uid = #{uid}
+    </update>
 </mapper>

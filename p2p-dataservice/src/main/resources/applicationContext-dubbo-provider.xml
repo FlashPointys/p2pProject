@@ -26,4 +26,8 @@
 
     <!--收益业务-->
     <dubbo:service interface="com.flashpoint.p2p.service.loan.IncomeRecordService" ref="incomeRecordServiceImpl" version="1.0.0" timeout="15000"></dubbo:service>
+
+
+    <!--redis全局唯一数字业务-->
+    <dubbo:service interface="com.flashpoint.p2p.service.loan.OnlyNumberService" ref="onlyNumberServiceImpl" version="1.0.0" timeout="15000"></dubbo:service>
 </beans>
