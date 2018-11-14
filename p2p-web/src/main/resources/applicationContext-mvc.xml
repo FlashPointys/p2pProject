@@ -35,4 +35,18 @@
         <property name="prefix" value="/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--配置过滤器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/loan/**"/>
+            <mvc:exclude-mapping path="/loan/loan"/>
+            <mvc:exclude-mapping path="/loan/loanInfo"/>
+            <mvc:exclude-mapping path="/loan/checkPhone"/>
+            <mvc:exclude-mapping path="/loan/checkCaptcha"/>
+            <mvc:exclude-mapping path="/loan/register"/>
+            <mvc:exclude-mapping path="/loan/loadStat"/>
+            <mvc:exclude-mapping path="/loan/login"/>
+            <bean class="com.flashpoint.p2p.interceptor.UserInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
